@@ -180,10 +180,6 @@
                 $('#idEstado').val($idEstado)
                 $('#idProyecto').val($idProyecto)
 
-                $(".modalResume").modal("show")
-                $('#idEstado').val($idEstado)
-                $('#idProyecto').val($idProyecto)
-
                 $.get('consultaP/'+$idProyecto, {idp: $idProyecto}, function(data)
                 {
                     $('#texto').val(data)
@@ -217,6 +213,25 @@
                 $('#textoEliminar').val(data)
 
             })
+        })
+    })
+</script>
+
+
+{{--proyectosusers--}}
+<script>
+    $(document).ready(function() {
+        $(".estadoProyectoUsuario").change(function ()
+        {
+            $idCambio = $(this).val()
+            $idProUser= $(this).attr("data-idprouser")
+
+            $('#idCambio').val($idCambio)
+            $('#idProUser').val($idProUser)
+
+            $.get('estadoProyectoUsuario', {idc: $idCambio, idp:$idProUser})
+            window.location.replace('')
+//            console.log($idCambio)
         })
     })
 </script>

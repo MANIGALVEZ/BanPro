@@ -157,7 +157,7 @@ class ProyectosController extends Controller
         $ipr = new ProyectosUsers();
         $ipr->proyectos_id = $id;
         $ipr->users_id = $user;
-        $ipr->estadosproyectosusers_id = 2;
+        $ipr->estadosproyectosusers_id = "2";
         $ipr->save();
         return redirect('/home');
 
@@ -256,4 +256,17 @@ class ProyectosController extends Controller
         return view('gestor.showup', compact('query', 'users'));
             */
        }
+
+
+    //Funcion para guardar y mostrar valores en el modal
+    public function estadoProyectoUsuario(Request $request)
+    {
+        dd($request);
+        $prous = ProyectosUsers::find($request->get("idp"));
+        $prous->estadosproyectosusers_id = $request->get("idc");
+        $prous->save();
+
+        return redirect("gestor.proyectosusers");
+
+    }
 }
