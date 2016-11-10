@@ -100,7 +100,10 @@ class ProyectosController extends Controller
                 ->orderBy('id', 'ASC')
                 ->paginate(3);
             $iprs = ProyectosUsers::all();
+//        if(is_null($lip))
             return view('selectestados', compact('query', 'iprs'));
+//        else
+//            echo "vacio";
     }
 
 
@@ -166,7 +169,8 @@ class ProyectosController extends Controller
 
 
     //Funcion Actualizar estado de proyecto en BD
-    public function estado(Request $request){
+    public function estado(Request $request)
+    {
         $proyecto = Proyecto::find($request->get("idp"));
         $proyecto->estadosdeproyectos_id = $request->get("ide");
         $proyecto->save();
@@ -261,12 +265,8 @@ class ProyectosController extends Controller
     //Funcion para guardar y mostrar valores en el modal
     public function estadoProyectoUsuario(Request $request)
     {
-        dd($request);
-        $prous = ProyectosUsers::find($request->get("idp"));
-        $prous->estadosproyectosusers_id = $request->get("idc");
+        $prous = ProyectosUsers::find($request->get("idpro"));
+        $prous->estadosproyectosusers_id = $request->get("idcam");
         $prous->save();
-
-        return redirect("gestor.proyectosusers");
-
     }
 }

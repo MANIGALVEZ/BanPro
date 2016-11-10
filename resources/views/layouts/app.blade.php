@@ -217,8 +217,7 @@
     })
 </script>
 
-
-{{--proyectosusers--}}
+{{--Funcion ajax para actualizar estados en la vista proyectosusers--}}
 <script>
     $(document).ready(function() {
         $(".estadoProyectoUsuario").change(function ()
@@ -229,9 +228,8 @@
             $('#idCambio').val($idCambio)
             $('#idProUser').val($idProUser)
 
-            $.get('estadoProyectoUsuario', {idc: $idCambio, idp:$idProUser})
-            window.location.replace('')
-//            console.log($idCambio)
+            $.get('/estProUser', {idcam: $idCambio, idpro: $idProUser})
+
         })
     })
 </script>

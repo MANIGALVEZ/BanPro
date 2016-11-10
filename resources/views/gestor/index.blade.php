@@ -156,19 +156,19 @@
     </table>
     {!!$query->render()!!}
 
-{{--<script>--}}
-    {{--$(document).ready(function(){--}}
-        {{--$('.btn-inscribir').click(function ()--}}
-        {{--{--}}
-        {{--swal({--}}
-            {{--title: "Inscrito",--}}
-            {{--text: "Se ha inscrito correctamente, pronto un administrador aprobará su solicitud",--}}
-            {{--type: "warning",--}}
-            {{--confirmButtonClass: "btn-warning",--}}
-            {{--confirmButtonText: "Aceptar"});--}}
-        {{--})--}}
-    {{--})--}}
-{{--</script>--}}
+<script>
+    $(document).ready(function(){
+        $('.btn-inscribir').click(function ()
+        {sweetAlert("ve")
+        swal({
+            title: "Inscrito",
+            text: "Se ha inscrito correctamente, pronto un administrador aprobará su solicitud",
+            type: "warning",
+            confirmButtonClass: "btn-warning",
+            confirmButtonText: "Aceptar"});
+        })
+    })
+</script>
 
 
 
@@ -204,7 +204,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="exampleModalLabel">Agregue una breve descripcion para eliminar el proyecto</h4>
+                    <h4 class="modal-title" id="exampleModalLabel">Agregue una breve descripción porque el proyecto va a ser eliminado</h4>
                 </div>
                 <div class="modal-body">
                         <div class="form-group">
